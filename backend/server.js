@@ -37,7 +37,7 @@ db.serialize(() => {
   )`);
 });
 
-// --- Hardcoded quiz questions
+// quiz questions
 const QUESTIONS = [
   { id: 1, q: "What is the capital of France?", options: ["Paris","London","Rome","Berlin"], a: 0 },
   { id: 2, q: "Which planet is known as the Red Planet?", options: ["Earth","Mars","Venus","Jupiter"], a: 1 },
@@ -51,7 +51,7 @@ const QUESTIONS = [
   { id: 10, q: "What is 10 squared?", options: ["100","20","1000","10"], a: 0 }
 ];
 
-// --- Helpers
+// Helpers
 function generateToken(user) {
   return jwt.sign({ id: user.id, name: user.name, email: user.email }, SECRET, { expiresIn: '7d' });
 }
@@ -66,7 +66,7 @@ function authenticateToken(req, res, next) {
   });
 }
 
-// --- Routes
+// Routes
 
 // Register
 app.post('/register', async (req, res) => {
